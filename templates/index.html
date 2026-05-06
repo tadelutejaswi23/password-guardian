@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Guardian</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">🛡️ Password Guardian</h1>
+        <p class="subtitle">Real-time strength & breach check</p>
+        <div class="input-group">
+            <input type="password" id="password" placeholder="Type a password..." autofocus>
+            <button id="checkBreach">🔍 Check Breach</button>
+        </div>
+        <div class="strength-wrapper">
+            <div class="strength-label">Strength</div>
+            <div class="strength-bar-bg">
+                <div id="strength-fill" class="strength-fill"></div>
+            </div>
+            <div id="strength-text" class="strength-text">Type to see strength</div>
+        </div>
+        <div class="gauge-container">
+            <canvas id="entropyGauge" width="200" height="200"></canvas>
+            <div class="gauge-value" id="entropyValue">0 bits</div>
+        </div>
+        <div id="breachResult" class="breach-result"></div>
+        <div id="suggestions" class="suggestions"></div>
+    </div>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
