@@ -3,6 +3,7 @@ from flask_cors import CORS
 import zxcvbn
 import requests
 import hashlib
+import os
 
 app = Flask(__name__)
 CORS(app)
@@ -39,4 +40,5 @@ def check_breach():
     return jsonify({'breached': False, 'count': 0})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
